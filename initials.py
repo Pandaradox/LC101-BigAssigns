@@ -10,7 +10,7 @@ def get_initials(fullname):
     for letter in range(len(fullname)-1):
         if fullname[letter] == " ":
             initials.append(fullname[letter+1])
-    return("".join(initials))
+    return(".".join(initials))
 
 
 def main():
