@@ -8,5 +8,3 @@
 #
 # if __name__ == "__main__":
 #     main()
-dict = {1: "Hello", 2: "World"}
-print(list(dict))

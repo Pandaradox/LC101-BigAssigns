@@ -25,7 +25,7 @@ def encrypt(message, rot):
 def main():
     secret = input("Type a message:\n")
     if len(sys.argv) == 1:
-        sys.argv.append(int(input("Rotate by:\n")))
+        sys.argv.append(input("Rotate by:\n"))
     for check in sys.argv[1]:
         if (check in string.punctuation
                 or check in string.whitespace
