@@ -17,11 +17,8 @@ def encrypt(message, key):
     secret = ""
     for char in message:
         if char in string.ascii_letters:
-            secret += rotate_character(char, alphabet_position(key[keypos].lower()))
-            if keypos == len(key)-1:
-                keypos = 0
-            else:
-                keypos += 1
+            secret += rotate_character(char, alphabet_position(key[keypos % len(key)].lower()))
+            keypos += 1
         else:
             secret += char
     return(secret)
@@ -38,8 +35,7 @@ def main():
             print("ERROR: Keyword must consist of alphabetical characters!")
             sys.exit()
     print(encrypt(message, sys.argv[1]))
-    # print(encrypt("The crow flies at midnight!", "boom"),
-    #             "Uvs osck rmwse bh auebwsih!")
+    
 
 
 if __name__ == "__main__":
