@@ -3,16 +3,13 @@
 to encrypt the string.  The file also takes a keyword argument in the
 terminal as a second parameter for argv."""
 
-
-from helpers import alphabet_position, rotate_character
-import string
 import sys
+import string
 
 
 def encrypt(message, key):
     from helpers import alphabet_position, rotate_character
     import string
-    import sys
     keypos = 0
     secret = ""
     for char in message:
@@ -35,7 +32,6 @@ def main():
             print("ERROR: Keyword must consist of alphabetical characters!")
             sys.exit()
     print(encrypt(message, sys.argv[1]))
-    
 
 
 if __name__ == "__main__":
