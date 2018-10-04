@@ -9,17 +9,12 @@ import string
 import sys
 
 
-def encrypt(message, rot):
-    from helpers import alphabet_position, rotate_character
-    import string
-    import sys
-    cryptic = ""
-    for char in message:
-        if (char in string.ascii_letters):
-            cryptic += rotate_character(char, rot)
-        else:
-            cryptic += char
-    return(cryptic)
+
+def encrypt(text, rot = 13):
+    secret = ""
+    for char in text:
+        secret += rotate_character(char, rot)
+    return(secret)
 
 
 def main():
@@ -30,7 +25,7 @@ def main():
         if (check in string.punctuation
                 or check in string.whitespace
                 or check in string.ascii_letters):
-            print("ERROR: Keymord must consist of alphabetical characters!")
+            print("ERROR: Keymord must consist of numerical characters!")
             sys.exit()
     print(encrypt(secret, int(sys.argv[1])))
 

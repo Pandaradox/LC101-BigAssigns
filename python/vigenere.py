@@ -7,17 +7,22 @@ import sys
 import string
 
 
-def encrypt(message, key):
+def encrypt(text, keyword):
     from helpers import alphabet_position, rotate_character
-    import string
-    keypos = 0
+    key = []
+    for k in keyword:
+        key += [alphabet_position(k)]
+
     secret = ""
-    for char in message:
-        if char in string.ascii_letters:
-            secret += rotate_character(char, alphabet_position(key[keypos % len(key)].lower()))
+    keypos = 0
+
+    for char in text:
+        if char.isalpha():
+            secret += rotate_character(char, key[keypos % len(key)])
             keypos += 1
         else:
             secret += char
+
     return(secret)
 
 
