@@ -12,7 +12,8 @@ def rotate_character(char, rot):
         return((string.ascii_uppercase)[(alphabet_position(char)+rot) % 26])
     elif char in string.ascii_lowercase:
         return((string.ascii_lowercase)[(alphabet_position(char)+rot) % 26])
-
+    else:
+        return(char)
 
 def main():
     import string
